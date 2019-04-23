@@ -4,10 +4,19 @@ class Clock {
         this.hourArrow = this.clock.querySelector('.clock__hour-arrow');
         this.minuteArrow = this.clock.querySelector('.clock__minute-arrow');
         this.secondsArrow = this.clock.querySelector('.clock__second-arrow');
+        this.digitsContainer = this.clock.querySelector('.clock__digits');
         this.animateArrows = this.animateArrows.bind(this);
         this.animate = this.animate.bind(this);
+        this.setDigitSize = this.setDigitSize.bind(this);
 
         window.requestAnimationFrame(this.animateArrows);
+        this.setDigitSize();
+    }
+
+    setDigitSize() {
+        const containerHeight = this.digitsContainer.getBoundingClientRect().height;
+        const fontSize = Math.round(containerHeight*0.09);
+        this.digitsContainer.style.fontSize = `${fontSize}px`;
     }
 
     animate() {

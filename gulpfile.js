@@ -8,7 +8,7 @@ const gulp = require('gulp'),
     csso = require('gulp-csso'),
     autoprefixer = require('gulp-autoprefixer');
 
-const outFolder = 'docs';
+const outFolder = 'dist';
 
 
 gulp.task('connect', () =>
